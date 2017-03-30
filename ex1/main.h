@@ -24,8 +24,25 @@ void task6();
 //Create an array of 100 random integers between 1 and 100, ask the user for an integer and tell if that number is in the array. Hint: use rand() to generate random numbers.
 void task7();
 //Create a static array of 10 random elements and write a function that takes an array of integers and its size as parameters and returns sum of its elements (int sumArray(int list[], int size);).
-int task8(int[], int);
+void task8();
 //Ask a user to enter a word and write a function that tells if letters of a word are ordered (ie. "buy" would return true, while "bye" - false).
-bool task9();
+void task9();
 //Implement sieve of Eratosthenes and print all prime numbers between 1 and 100.
 void task10();
+
+int sumArray(int array[],int n){
+    cout<<"(Task 8)\n";
+    int sum=0;
+    for (int i=0; i<n; i++){
+        sum+=array[i];
+    }
+    return sum;
+}
+
+ /*
+srand(NULL);
+cout << rand() << endl;
+rand() % 100 number between 0 and 99
+int array[10];
+array[i] = i +5;
+    */
