@@ -10,7 +10,17 @@
 using namespace std;
 
 int main(){
-    int a = 5;
-    cout<< a << " * " << 1.0 / a<< " = " << a*1/a <<endl;
-    return 0;
+    /*
+    int* ptrInt= new int;
+    *ptrInt=10;
+    cout<<sizeof(ptrInt)<<endl;
+    cout<<sizeof(*ptrInt)<<endl;
+    cout<<ptrInt<<endl;
+    cout<<*ptrInt<<endl;
+    ptrInt++;
+    cout<<sizeof(ptrInt)<<endl;
+    cout<<sizeof(*ptrInt)<<endl;
+    cout<<ptrInt<<endl;
+    cout<<*ptrInt<<endl;
+    */
 }
