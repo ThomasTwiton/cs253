@@ -22,5 +22,14 @@ int main(){
     cout<<sizeof(*ptrInt)<<endl;
     cout<<ptrInt<<endl;
     cout<<*ptrInt<<endl;
+   
+    int a=10;
+    int *p =&a;
+    cout<<*p<<endl;
+    ++*p;
+    cout<< a << endl;
+    cout<< *p << endl;
+
     */
+
 }
