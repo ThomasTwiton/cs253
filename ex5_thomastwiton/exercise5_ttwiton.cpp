@@ -69,8 +69,8 @@ double displayCart(vector<GameInCart> cart, double salesTax, ofstream &fout) {
     double total = 0;
     double tax=0;
     printNChars('-', 80);
-    cout<<left<<setw(20)<<"Title"<<left<<setw(20)<<"Platform"<<"Price"<<right<<setw(11)<<"Qty"<<endl;
-    fout<<left<<setw(20)<<"Title"<<left<<setw(20)<<"Platform"<<"Price"<<right<<setw(11)<<"Qty"<<endl;
+    cout<<left<<setw(20)<<"Title"<<left<<setw(20)<<"Platform"<<left<<setw(20)<<"Price"<<"Qty"<<endl;
+    fout<<left<<setw(20)<<"Title"<<left<<setw(20)<<"Platform"<<left<<setw(20)<<"Price"<<"Qty"<<endl;
     for(int i=0;i<cart.size(); i++){
         cart.at(i).print();
         cart.at(i).save(fout);

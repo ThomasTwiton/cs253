@@ -1,8 +1,9 @@
-Title               Platform            Price       Qty
-Battlefield 4       PS4                 $18.32        22
-Call of Duty        PS3                 $10.00        22
-PES 2013            PC                  $39.99        50
+Title               Platform            Price               Qty
+Battlefield 4       PS4                 $18.32               1
+Call of Duty        PS3                 $10.00               26
+FIFA 15             PS3                 $50.00               50
+Gears of War        PC                  $5.99                33
 
-Before Tax: $2360.29
-Tax: $94.41
-Total: $2454.70
+Before Tax: $2678.39
+Tax: $133.92
+Total: $2812.31

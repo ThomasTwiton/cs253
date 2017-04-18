@@ -38,13 +38,13 @@ struct GameInCart {
     void print() {
         //Display Game-in-cart info
         //Sample output: Battlefield 4       PS4       $ 18.32         1
-        cout<<left<<setw(20)<<game.title<<left<<setw(20)<<game.platform<<"$"<<setprecision(2)<<fixed<<game.price<<right<<setw(10)<<qty<<endl;
+        cout<<left<<setw(20)<<game.title<<left<<setw(20)<<game.platform<<"$"<<left<<setw(20)<<setprecision(2)<<fixed<<game.price<<qty<<endl;
     }
     // Save game properties (title, platform, price, quantity) to the file (fout)
     void save(ofstream &fout) {
         //Save Game-in-cart info to a file
         //Sample output: Battlefield 4       PS4       $ 18.32         1
-        fout<<left<<setw(20)<<game.title<<left<<setw(20)<<game.platform<<"$"<<setprecision(2)<<fixed<<game.price<<right<<setw(10)<<qty<<endl;       
+        fout<<left<<setw(20)<<game.title<<left<<setw(20)<<game.platform<<"$"<<left<<setw(20)<<setprecision(2)<<fixed<<game.price<<qty<<endl;       
     }
 };
 
