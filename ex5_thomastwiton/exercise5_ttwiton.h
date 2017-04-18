@@ -19,8 +19,9 @@ struct Game {
     double price;
     // Display game properties (title, publisher, platform, release year, price) on the standard output (console)
     void print() {
-        //TODO: Display game info
+        //Display game info
         //Sample output: Battlefield 4       Electronic Arts     PS4       2013      $ 18.32
+        cout<<left<<setw(25)<<title<<left<<setw(20)<<publisher<<left<<setw(10)<<platform<<left<<setw(10)<<year<<"$ "<<setprecision(2)<<fixed<<price<<endl;
     }
 };
 
@@ -35,13 +36,15 @@ struct GameInCart {
     int qty;
     // Display game properties (title, platform, price, quantity) on the standard output (console)
     void print() {
-        //TODO: Display Game-in-cart info
+        //Display Game-in-cart info
         //Sample output: Battlefield 4       PS4       $ 18.32         1
+        cout<<left<<setw(20)<<game.title<<left<<setw(20)<<game.platform<<"$"<<setprecision(2)<<fixed<<game.price<<right<<setw(10)<<qty<<endl;
     }
     // Save game properties (title, platform, price, quantity) to the file (fout)
     void save(ofstream &fout) {
-        //TODO: Save Game-in-cart info to a file
+        //Save Game-in-cart info to a file
         //Sample output: Battlefield 4       PS4       $ 18.32         1
+        fout<<left<<setw(20)<<game.title<<left<<setw(20)<<game.platform<<"$"<<setprecision(2)<<fixed<<game.price<<right<<setw(10)<<qty<<endl;       
     }
 };
 

@@ -33,22 +33,70 @@ void readStates(ifstream &fileIn, vector<State> &states) {
 }
 
 void readInventory(ifstream &fileIn, vector<Game> &inventory) {
-    //TODO: Read the inventory from the file into a vector
+    //Read the inventory from the file into a vector
+    string title;
+    string publisher;
+    string platform;
+    int year;
+    double price;
+    while (!fileIn.eof()){
+        getline(fileIn, title, '|');
+        getline(fileIn, publisher, '|');
+        getline(fileIn, platform, '|');
+        fileIn >> year;
+        fileIn.ignore(__INT_MAX__,'|');
+        fileIn >> price;
+        fileIn.ignore(__INT_MAX__,'\n');
+        Game g = {title, publisher, platform, year, price};
+        inventory.push_back(g);
+    }
+
 }
 
 void displayInventory(vector<Game> inventory) {
-    //TODO: Display inventory
+    //Display inventory
+    printNChars('-', 80);
+    cout<<left<<setw(25)<<"Title"<<left<<setw(20)<<"Publisher"<<left<<setw(10)<<"Platform"<<left<<setw(10)<<"Year"<<"Price"<<endl;
+    for(int i=0;i<inventory.size(); i++){
+        cout<<"#"<<i+1<<"\t";
+        inventory.at(i).print();
+    }
+    printNChars('-', 80);
 }
 
 double displayCart(vector<GameInCart> cart, double salesTax, ofstream &fout) {
-    //TODO: Display the cart and calculate total amount owned
+    //Display the cart and calculate total amount owned
     double total = 0;
+    double tax=0;
+    printNChars('-', 80);
+    cout<<left<<setw(20)<<"Title"<<left<<setw(20)<<"Platform"<<"Price"<<right<<setw(11)<<"Qty"<<endl;
+    fout<<left<<setw(20)<<"Title"<<left<<setw(20)<<"Platform"<<"Price"<<right<<setw(11)<<"Qty"<<endl;
+    for(int i=0;i<cart.size(); i++){
+        cart.at(i).print();
+        cart.at(i).save(fout);
+        total=total+(cart.at(i).game.price*cart.at(i).qty);
+    }
+    if(total>100){
+        total=total*.9;
+    }
+    cout<<endl;
+    fout<<endl;
+    cout<<"Before Tax: $"<<setprecision(2)<<fixed<<total<<endl;
+    fout<<"Before Tax: $"<<setprecision(2)<<fixed<<total<<endl;
+    tax=total*(salesTax/100);
+    total=total+tax;
+    cout<<"Tax: $"<<setprecision(2)<<fixed<<tax<<endl;
+    fout<<"Tax: $"<<setprecision(2)<<fixed<<tax<<endl;
+    cout<<"Total: $"<<setprecision(2)<<fixed<<total<<endl;
+    fout<<"Total: $"<<setprecision(2)<<fixed<<total<<endl;
+    printNChars('-', 80);
+
 
     return total;
 }
 
 int readANumber(int lower_bound=0, int upper_bound=100) {
-    //TODO: Read the number with boundaries
+    //Read the number with boundaries
     int result = lower_bound-1;
     while(result<lower_bound || result>upper_bound){        
         cout<<"Enter a number between "<<lower_bound<<" and "<<upper_bound<<endl;
@@ -60,7 +108,21 @@ int readANumber(int lower_bound=0, int upper_bound=100) {
 }
 
 void readState(vector<State> &states, double &salesTax) {
-    //TODO: Read the state code
+    //Read the state code
+    bool validcode=false;
+    string code;
+    while(!validcode){
+        cout<<"Enter your state's two letter code:"<<endl;
+        cin>>code;
+        cin.clear();
+        cin.ignore(__INT_MAX__, '\n');
+        for(int i=0; i<states.size(); i++){
+            if (code==states.at(i).code){
+                validcode=true;
+                salesTax=states.at(i).taxRate;
+            }
+        }
+    }
 }
 
 int main() {

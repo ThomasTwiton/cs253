@@ -32,4 +32,7 @@ int main(){
 
     */
 
+    cout<<"$"<<setfill('.')<<setw(5)<<5.20<<endl;
+    
+
 }

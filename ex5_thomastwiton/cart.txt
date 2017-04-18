@@ -1,0 +1,8 @@
+Title               Platform            Price       Qty
+Battlefield 4       PS4                 $18.32        22
+Call of Duty        PS3                 $10.00        22
+PES 2013            PC                  $39.99        50
+
+Before Tax: $2360.29
+Tax: $94.41
+Total: $2454.70
