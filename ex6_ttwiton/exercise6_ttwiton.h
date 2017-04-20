@@ -1,3 +1,4 @@
+//Thomas Twiton Exercise 6
 #pragma once
 
 #include <iostream>
@@ -242,10 +243,12 @@ class Roster{
         vector<Student> studentList;
     public:
         Roster(string);
+        //Roster(char*);
         friend ostream& operator<<(ostream&, const Roster&);
         vector<Student> getStudentList();
 };
-
+// when passing file name, perform this casting: char *filename = (char*)"schedule.txt";
+//Roster::Roster(char* filename){
 Roster::Roster(string filename){
     ifstream fileIn;
     fileIn.open(filename.c_str());
