@@ -1,11 +1,10 @@
 #include "exercise6_ttwiton.h"
 
 using namespace std;
-/*
+
 void changeCollegeRank(College& college, int rank) {
     college.setRank(rank);
 }
-*/
 
 int main() {
     /* Exercise 6: Classes */
@@ -30,7 +29,7 @@ int main() {
     cout << "Expected: " << "Main 123" << endl;
     cout << "Observed: " << *r22 << endl;
     cout << "---" << endl;
-/*
+
     cout << "\nTask 3: Employee" << endl;
     cout << "---" << endl;
     Employee e31 = Employee("Alice", "Anderson", 50000, true);
@@ -193,7 +192,7 @@ int main() {
     cout << "Expected: Roster based on the content of the roster.txt" << endl;
     cout << "Observed: " << *r10;
     cout << "---" << endl;
-*/
+
 
     return 0;
 }
