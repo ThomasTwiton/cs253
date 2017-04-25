@@ -101,9 +101,18 @@ int main(){
     ifs.open("test.txt");
     while(ifs>>n){if (count++ % 2){sum=sum+n;}}
     cout<<sum<<endl;
-    */
 
     Person *p8=new Person("Alice", new Date(1,2,2016));
     cout<<p8;
 
+    vector<char> vec(1);
+    string s="Luther";
+    for(int i=0; i<s.length(); i++){vec[i]=s[i];}
+    cout<<vec.size()<<endl;
+   
+    vector<char> aWord(10);
+    char c='L';
+    for (int i= aWord.size(); i>0; i--){aWord[i-1]=--c;}
+    cout<<aWord.at(0)<<endl;    
+ */
 }
