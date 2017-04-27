@@ -5,11 +5,49 @@
 #include <stdlib.h>
 #include <time.h>
 #include <vector>
-#include <cmath>
-
+#include <math.h>
 using namespace std;
-
-using namespace std;
+class Bar {
+    protected:
+        int x;
+        string y;
+    public:
+        Bar() { x = 253; y = "CS"; };
+        Bar(int i, string s) { x = i; y = s; };
+        int getX() { return x; }
+        string getY() { return y; }
+        friend ostream& operator<<(ostream&, const Bar&);
+};
+ostream& operator<<(ostream & os, const Bar& b) {
+    os << b.y << "-" << b.x;
+    return os;
+}
+class Foo: public Bar {
+    private:
+        double z;
+    public:
+        Foo() : Bar(), z(2) { };
+        Foo(int i, string s, double d) : Bar(i, s), z(d) { };
+        double getZ() { return z; }
+        friend ostream& operator<<(ostream&, const Foo&);
+};
+ostream& operator<<(ostream & os, const Foo& f) {
+    os << f.y << "-" << f.x << fixed << setprecision(2) << " (" << f.z << ")";
+    return os;
+}
+class Buzz: public Bar {
+    private:
+        char w;
+    public:
+        Buzz() : Bar(), w('A') { };
+        Buzz(int i, string s, char c) : Bar(i, s), w(c) { };
+        char getW() { return w; }
+        friend ostream& operator<<(ostream &, const Buzz&);
+};
+ostream& operator<<(ostream & os, const Buzz& b) {
+    os << b.y << "-" << b.x << "-" << b.w;
+    return os;
+}
 class Date {
     private:
         int day;
@@ -115,4 +153,10 @@ int main(){
     for (int i= aWord.size(); i>0; i--){aWord[i-1]=--c;}
     cout<<aWord.at(0)<<endl;    
  */
+
+
+
+Buzz* q6ObjPtr = new Buzz(42, "Answer", '#');
+cout<< (const Bar&)*q6ObjPtr << endl;
+
 }
