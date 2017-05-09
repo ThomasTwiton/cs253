@@ -152,11 +152,11 @@ int main(){
     char c='L';
     for (int i= aWord.size(); i>0; i--){aWord[i-1]=--c;}
     cout<<aWord.at(0)<<endl;    
- */
-
-
 
 Buzz* q6ObjPtr = new Buzz(42, "Answer", '#');
 cout<< (const Bar&)*q6ObjPtr << endl;
+*/
+
+
 
 }
